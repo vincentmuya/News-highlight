@@ -34,6 +34,7 @@ def process_result(source_list):
     the source list is  a list of dictionaries containing news results
     '''
     source_result= []
+
     for source_item in source_list:
        source = source_item.get('source')
        author = source_item.get('author')
@@ -48,3 +49,24 @@ def process_result(source_list):
            source_result.append(source_object)
 
     return source_result
+
+
+def get_news(id):
+    get_news_details_url = base_url.format(source,api_key)
+
+    with urllib.request.urlopen(get_news_details_url) as url:
+        news_details_data = url.read()
+        news_details_response = json.loads(news_details_data)
+
+        news_object = None
+        if news_details_response:
+            source = news_details_response.get('source')
+            author = news_details_response.get('original_author')
+            title = news_details_response.get('title')
+            description = news_details_response.get('description')
+            url = news_details_response.get('url')
+            urlToImage = news_details_response.get('urlToImage')
+
+            news_object = news(source,author,title,description,url,urlToImage,publishedAt)
+
+    return news_object
