@@ -1,3 +1,4 @@
+{% extends 'base.html'%}
 {% import 'macro.html' as macro%}
 <!DOCTYPE html>
 <html>
@@ -10,40 +11,44 @@
     {% endif %}
   </head>
   <body>
-    <!-- technology  section  -->
-           <h3> technology News</h3>
-            <ul>
-               {% for technology in technology %}
-                   <li>{{ technology.title}}</li>
-               {% endfor %}
-           </ul>
-           <!-- entertainment  section  -->
-           <h3> Entertainment News</h3>
-            <ul>
-               {% for entertainment in entertainment %}
-                   <li>{{ entertainment.title}}</li>
-               {% endfor %}
-           </ul>
-           <!-- health  section  -->
-           <h3> health News</h3>
-            <ul>
-               {% for health in health %}
-                   <li>{{ health.title}}</li>
-               {% endfor %}
-           </ul>
-           <!-- ssience  section  -->
-           <h3> science News</h3>
-            <ul>
-               {% for science in science %}
-                   <li>{{ science.title}}</li>
-               {% endfor %}
-           </ul>
-           <!-- sports  section  -->
-           <h3> sport News</h3>
-            <ul>
-               {% for sport in sport %}
-                   <li>{{ sport.title}}</li>
-               {% endfor %}
-           </ul>
+    <!-- content block -->
+  {% block content %}
+
+     <h3> News HighLight</h3>
+
+     <h3> Technology</h3>
+     <!-- technology  section  -->
+      <ul>
+          {{ macro.displaySourceList(technology)}}
+     </ul>
+
+     <!-- entertainment  section  -->
+     <h3> Entertainment News</h3>
+      <ul>
+       <li>{{ macro.displaySourceList(entertainment)}}</li>
+     </ul>
+
+     <!-- health  section  -->
+     <h3> health News</h3>
+      <ul>
+         {% for health in health %}
+             <li>{{ health.title}}</li>
+         {% endfor %}
+     </ul>
+     <!-- ssience  section  -->
+     <h3> science News</h3>
+      <ul>
+         {% for science in science %}
+             <li>{{ science.title}}</li>
+         {% endfor %}
+     </ul>
+     <!-- sports  section  -->
+     <h3> sport News</h3>
+      <ul>
+         {% for sport in sport %}
+             <li>{{ sport.title}}</li>
+         {% endfor %}
+      </ul>
+      {% endblock%}
   </body>
 </html>
