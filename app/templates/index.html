@@ -25,29 +25,23 @@
      <!-- entertainment  section  -->
      <h3> Entertainment News</h3>
       <ul>
-       <li>{{ macro.displaySourceList(entertainment)}}</li>
+       {{ macro.displaySourceList(entertainment)}}
      </ul>
 
      <!-- health  section  -->
      <h3> health News</h3>
       <ul>
-         {% for health in health %}
-             <li>{{ health.title}}</li>
-         {% endfor %}
+          {{ macro.displaySourceList(health)}}
      </ul>
      <!-- ssience  section  -->
      <h3> science News</h3>
       <ul>
-         {% for science in science %}
-             <li>{{ science.title}}</li>
-         {% endfor %}
+        {{ macro.displaySourceList(science)}}
      </ul>
      <!-- sports  section  -->
      <h3> sport News</h3>
       <ul>
-         {% for sport in sport %}
-             <li>{{ sport.title}}</li>
-         {% endfor %}
+            {{ macro.displaySourceList(sport)}}
       </ul>
       {% endblock%}
   </body>
