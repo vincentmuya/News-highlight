@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from .request import get_news_source
+from .request import get_news_source,get_news
 
 
 #views
@@ -26,6 +26,8 @@ def index():
 def news(totalResults):
    '''
    page function that returns books data
-
    '''
-   return render_template('news.html', id = totalResults)
+   news = get_news(source)
+   title = f'{news.title}'
+
+   return render_template('news.html',title = title, news = news)
