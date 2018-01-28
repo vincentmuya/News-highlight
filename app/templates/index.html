@@ -1,16 +1,12 @@
 {% extends 'base.html'%}
 {% import 'macro.html' as macro%}
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    {% if title %}
-    <title>{{ title }}</title>
-    {% else %}
-    <title>Welcome to News highlight </title>
-    {% endif %}
-  </head>
-  <body>
+
+<!-- Styles block -->
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+
     <!-- content block -->
   {% block content %}
     <h3> Technology</h3>
@@ -39,5 +35,3 @@
             {{ macro.displaySourceList(sport)}}
       </ul>
       {% endblock%}
-  </body>
-</html>
