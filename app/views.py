@@ -1,7 +1,7 @@
 from flask import render_template
 from app import app
-from .request import get_news_source,get_news
-
+from .request import get_news_source
+# ,get_news
 
 #views
 @app.route('/')
@@ -22,8 +22,8 @@ def index():
     title = "Welcome to News HighLight"
     return render_template('index.html', title = title, technology = technology, sport=sport,science=science,health=health,business=business,entertainment=entertainment)
 
-@app.route('/news/<int:totalResults>')
-def news(totalResults):
+@app.route('/news/<int:source>')
+def news(source):
    '''
    page function that returns books data
    '''
