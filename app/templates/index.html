@@ -9,29 +9,77 @@
 
     <!-- content block -->
   {% block content %}
+  <div class="container">
+
+  <div class="tabs">
+ <div class="row">
+ <div class="col-md-2">
     <h3> Technology</h3>
-     <!-- technology  section  -->
-      <ul>
-          {{ macro.displaySourceList(technology)}}
-     </ul>
+  </div>
+  <div class="col-md-10">
+    <!-- technology  section  -->
+    <ul>
+      {{ macro.displaySourceList(technology)}}
+    </ul>
+  </div>
+</div>
+</div>
+
+<div class="tabs">
+<div class="row">
+<div class="col-md-2">
+  <h3> Entertainment News</h3>
+</div>
+<div class="col-md-10">
     <!-- entertainment  section  -->
-     <h3> Entertainment News</h3>
       <ul>
        {{ macro.displaySourceList(entertainment)}}
      </ul>
+   </div>
+ </div>
+ </div>
+
+ <div class="tabs">
+ <div class="row">
+ <div class="col-md-2">
       <!-- health  section  -->
      <h3> health News</h3>
+     </div>
+     <div class="col-md-10">
       <ul>
           {{ macro.displaySourceList(health)}}
      </ul>
+   </div>
+ </div>
+ </div>
+
+ <div class="tabs">
+ <div class="row">
+ <div class="col-md-2">
      <!-- ssience  section  -->
      <h3> science News</h3>
+     </div>
+     <div class="col-md-10">
       <ul>
         {{ macro.displaySourceList(science)}}
      </ul>
+   </div>
+ </div>
+ </div>
+
+ <div class="tabs">
+ <div class="row">
+ <div class="col-md-2">
      <!-- sports  section  -->
      <h3> sport News</h3>
+   </div>
+   <div class="col-md-10">
       <ul>
             {{ macro.displaySourceList(sport)}}
       </ul>
+    </div>
+  </div>
+  </div>
+
+</div>
       {% endblock%}
