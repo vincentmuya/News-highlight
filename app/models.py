@@ -10,5 +10,3 @@ class News:
         self.url = url
         self.urlToImage = urlToImage
         self.publishedAt = publishedAt
-
-class Sources:
