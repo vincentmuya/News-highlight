@@ -1,5 +1,5 @@
 from flask import render_template
-from app import app
+from app import main
 from .request import get_news_source,get_news
 # ,get_news
 
