@@ -22,12 +22,12 @@ def index():
     title = "Welcome to News HighLight"
     return render_template('index.html', title = title, technology = technology, sport=sport,science=science,health=health,business=business,entertainment=entertainment)
 
-@app.route('/news/<source>')
-def news(source):
+@app.route('/news/<int:source_id>')
+def news(source_id):
    '''
    page function that returns books data
    '''
    news = get_news_source(source)
    title = f'{tite.source}'
 
-   return render_template('news.html',title = title, news = news)
+   return render_template('news.html',title = title, id = source_id)
