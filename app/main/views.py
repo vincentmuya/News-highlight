@@ -4,7 +4,7 @@ from .request import get_news_source,get_news
 # ,get_news
 
 #views
-@app.route('/')
+@main.route('/')
 def index():
 
     '''
@@ -22,7 +22,7 @@ def index():
     title = "Welcome to News HighLight"
     return render_template('index.html', title = title, technology = technology, sport=sport,science=science,health=health,business=business,entertainment=entertainment)
 
-@app.route('/news/<int:source_id>')
+@main.route('/news/<int:source_id>')
 def news(source_id):
    '''
    page function that returns books data
